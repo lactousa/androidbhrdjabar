@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@android:color/holo_green_light" android:gravity="bottom"/>
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:startColor="#16C12C"
+                android:centerColor="#ffffff"
+                android:endColor="#ffffff"
+                android:centerY="0.5"
+                android:angle="90"/>
+        </shape>
+    </item>
+</layer-list>

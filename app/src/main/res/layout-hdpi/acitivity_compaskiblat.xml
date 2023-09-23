@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <ImageView
+        android:id="@+id/imageView29"
+        android:layout_width="match_parent"
+        android:layout_height="913dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.512"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/boxatas_hijau5" />
+
+    <ImageView
+        android:id="@+id/imageView12"
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:elevation="3dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/headerbg1" />
+
+    <ImageView
+        android:id="@+id/imageView10"
+        android:layout_width="59dp"
+        android:layout_height="36dp"
+        android:elevation="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.044"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.02"
+        app:srcCompat="@drawable/backatas1" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Kompas Kiblat"
+        android:elevation="5dp"
+        android:textAppearance="@style/GreenTextPoppins"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView12"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="@+id/imageView12"
+        app:layout_constraintTop_toTopOf="@+id/imageView12"
+        app:layout_constraintVertical_bias="0.355" />
+
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="863dp"
+        android:layout_marginTop="39dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:context=".KompasKiblatActivity">
+
+
+        <ImageView
+            android:id="@+id/compasskiblat"
+            android:layout_width="223dp"
+            android:layout_height="224dp"
+            android:layout_alignStart="@+id/imageView"
+            android:layout_alignTop="@+id/imageView"
+            android:layout_alignEnd="@+id/imageView"
+            android:layout_alignBottom="@+id/imageView"
+            android:layout_marginStart="86dp"
+            android:layout_marginTop="186dp"
+            android:layout_marginEnd="78dp"
+            android:layout_marginBottom="177dp"
+            android:src="@drawable/logoarahkibalt1" />
+
+        <TextView
+            android:id="@+id/orientationTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            android:layout_alignStart="@+id/imageView"
+            android:layout_alignTop="@+id/imageView"
+            android:layout_alignEnd="@+id/imageView"
+            android:layout_alignBottom="@+id/imageView"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:layout_marginStart="149dp"
+            android:layout_marginTop="626dp"
+            android:layout_marginEnd="109dp"
+            android:layout_marginBottom="-61dp"
+            android:text="Orientasi: 0 derajat"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="302dp"
+            android:layout_height="530dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="34dp"
+            android:layout_marginTop="-41dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="300dp"
+            app:srcCompat="@drawable/sejajar" />
+
+        <TextView
+            android:id="@+id/textView54"
+            android:layout_width="286dp"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/imageView"
+            android:layout_alignBottom="@+id/imageView"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="62dp"
+            android:layout_marginTop="61dp"
+            android:layout_marginEnd="51dp"
+            android:layout_marginBottom="431dp"
+            android:gravity="center"
+            android:text="Sejajarkan Tanda Ka'bah untuk mendapatkan arah kiblat yang sudah sesuai"
+            tools:ignore="UnknownId" />
+
+        <ImageView
+            android:id="@+id/imageView37"
+            android:layout_width="283dp"
+            android:layout_height="250dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="45dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="200dp"
+            app:srcCompat="@drawable/sejadah" />
+
+        <TextView
+            android:id="@+id/textView16"
+            android:layout_width="76dp"
+            android:layout_height="38dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="256dp"
+            android:layout_marginTop="101dp"
+            android:layout_marginEnd="28dp"
+            android:layout_marginBottom="724dp"
+            android:text="xhdpi"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </RelativeLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

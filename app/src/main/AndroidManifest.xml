@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.bhrdjawabarat"
+    tools:ignore="CoarseFineLocation">
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.BHRDJAWABARAT"
+        tools:targetApi="31"
+        tools:ignore="ExtraText">
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity> <!-- Aktivitas Kiblat -->
+        <activity
+            android:name=".KiblatActivity"
+            android:screenOrientation="portrait"
+            android:exported="false" /> <!-- Deklarasi untuk setiap aktivitas Splash Screen -->
+        <activity
+            android:name=".HalamanUtamaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SplashScreen2"
+            android:exported="false" />
+        <activity
+            android:name=".SplashScreen3"
+            android:exported="false" />
+        <activity
+            android:name=".SplashScreen4"
+            android:exported="false" />
+        <activity
+            android:name=".SplashScreen5"
+            android:exported="false" /> <!-- Aktivitas Halaman Utama -->
+        <activity
+            android:name=".ActivityLocationRukyat"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            />
+
+        <activity
+            android:name=".TentangBhrdActivity"
+            android:label="Berita"
+            android:theme="@style/Base.Theme.BHRDJAWABARAT"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity android:name=".DetailBeritaActivity"
+            android:screenOrientation="portrait"
+            >
+            <!-- Add any intent filters or other activity attributes here if needed -->
+        </activity>
+
+
+        <activity
+            android:name=".JadwalSholatActivity"
+            android:label="Jadwal Sholat"
+            android:theme="@style/Base.Theme.BHRDJAWABARAT"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <activity
+            android:name=".CalenderHijriyahActivity"
+            android:label="Calender"
+            android:theme="@style/Base.Theme.BHRDJAWABARAT"
+            android:screenOrientation="portrait"
+            >
+        </activity>
+
+        <activity
+            android:name=".InfoHilalActivity"
+            android:label="Info Hilal"
+            android:theme="@style/Base.Theme.BHRDJAWABARAT"
+            android:screenOrientation="portrait"
+            >
+        </activity>
+
+        <activity
+            android:name=".NotifikasiAdzanActivity"
+            android:label="Info Hilal"
+            android:theme="@style/Base.Theme.BHRDJAWABARAT"
+            android:screenOrientation="portrait"
+            >
+        </activity>
+
+        <activity
+            android:name=".KompasKiblatActivity"
+            android:label="Kompas Kiblat">
+        </activity>
+
+        <activity
+            android:name=".RealTimeDataActivity"
+            android:label="Kompas Kiblat">
+        </activity>
+
+        <activity
+            android:name=".DetailInfoHilalActivity"
+            android:label="Detail Info Hilal">
+        </activity>
+
+
+
+
+    </application>
+
+</manifest>

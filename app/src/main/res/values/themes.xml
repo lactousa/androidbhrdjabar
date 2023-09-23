@@ -1,0 +1,9 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="Base.Theme.BHRDJAWABARAT" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <item name="colorPrimary">@color/colorGreenheader</item> <!-- Mengubah warna primer menjadi hijau -->
+        <item name="colorPrimaryVariant">@color/colorGreenVariant</item> <!-- Jika diperlukan, ubah juga warna varian primer -->
+    </style>
+    <style name="Theme.BHRDJAWABARAT" parent="Base.Theme.BHRDJAWABARAT" />
+</resources>

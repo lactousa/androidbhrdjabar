@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="GreenTextPoppins" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">#00AA16</item>
+        <item name="android:fontFamily">@font/poppins_regular</item>
+        <!-- Tambahkan atribut lain sesuai kebutuhan -->
+    </style>
+    <style name="CustomCalendarDateText">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:padding">4dp</item>
+        <!-- Tambahkan atribut lain yang ingin Anda sesuaikan -->
+    </style>
+
+
+
+</resources>
