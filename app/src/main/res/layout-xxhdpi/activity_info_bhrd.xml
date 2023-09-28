@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/imageView10"
+            android:layout_width="59dp"
+            android:layout_height="36dp"
+            android:elevation="5dp"
+            android:padding="1dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.044"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.02"
+            app:srcCompat="@drawable/backatas1" />
+
+        <ImageView
+            android:id="@+id/imageView43"
+            android:layout_width="157dp"
+            android:layout_height="161dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.022"
+            app:srcCompat="@drawable/logo" />
+
+        <TextView
+            android:id="@+id/textView18"
+            android:layout_width="248dp"
+            android:layout_height="54dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="Badan Hisab Rukyat Daerah Jawa Barat"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView43"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="800dp"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@+id/textView18"
+            tools:layout_editor_absoluteX="2dp"
+            android:paddingStart="1px"
+            android:paddingEnd="1px"
+            android:paddingLeft="1px"
+            android:paddingRight="1px">
+
+            <!-- Sejarah -->
+
+            <TextView
+                android:id="@+id/textSejarah"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Sejarah"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:paddingStart="1px"
+                android:paddingEnd="1px"
+                android:paddingLeft="1px"
+                android:paddingRight="1px"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginTop="10dp"
+                android:text="BHRD adalah Badan yang berada di lingkungan Kementerian Agama (dulu Departeman Agama) di daerah Kabupaten/Kota yang memiliki tugas melaksanakan kegiatan yang berkaitan dengan penyelenggaraan hisab dan rukyat serta memberikan saran dan masukan kepada Kantor Kementerian Agama setempat dalam penentuan awal bulan Qomariyah."
+                android:textSize="15sp"
+                android:paddingStart="1px"
+                android:paddingEnd="1px"
+                android:paddingLeft="1px"
+                android:paddingRight="1px"/>
+
+            <!-- Visi dan Misi -->
+            <TextView
+                android:id="@+id/textVisiMisi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="Visi dan Misi"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:paddingStart="1px"
+                android:paddingEnd="1px"
+                android:paddingLeft="1px"
+                android:paddingRight="1px"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Di dalam Badan Hisab dan Rukyat, terdapat Tim Pengurus, Tim Pelaksana, dan Tim Pengkajian. Tim Pengurus dan Tim Pelaksana Badan Hisab dan Rukyat bertugas:\n\n
+        1. Melakukan koordinasi pelaksanaan kegiatan hisab rukyat.\n\n
+        2. Melaksanakan dan mengkoordinasikan pelaksanaan rukyat hilal awal bulan bulan qomariyah.\n\n
+        3. Melaksanakan pertemuan, seminar, workshop, orientasi, dan pelatihan hisab rukyat.\n\n
+        4. Memberikan saran dan masukan yang berkaitan dengan awal bulan qomariyah kepada Menteri Agama.\n\n
+        5. Melaporkan hasil pelaksanaan tugas kepada Menteri Agama."
+                tools:ignore="HardcodedText"
+                android:paddingStart="1px"
+                android:paddingEnd="1px"
+                android:paddingLeft="1px"
+                android:paddingRight="1px"/>
+
+            <!-- Tugas dan Fungsi -->
+            <TextView
+                android:id="@+id/textTugasFungsi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="Tugas dan Fungsi"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:paddingStart="1px"
+                android:paddingEnd="1px"
+                android:paddingLeft="1px"
+                android:paddingRight="1px" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="Sementara Tim Pengkajian Badan Hisab dan Rukyat memiliki tugas:"
+                tools:ignore="HardcodedText" />
+
+            <!-- Poin-poin tugas -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="1. Melaksanakan penelitian, pengkajian, dan pengembangan hisab rukyat."
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="2. Mengimplementasikan berbagai sistem hisab rukyat yang beredar di masyarakat."
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="3. Melaksanakan penelitian dan pembahasan terhadap kasus-kasus perbedaan penetapan awal bulan Qomariyah."
+                android:layout_marginBottom="10dp"
+                tools:ignore="HardcodedText" />
+
+            <!-- Paragraf berikutnya -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:text="Dari penjelasan di atas dapat dipahami bahwa Badan Hisab dan Rukyat yang berada di Daerah (Kabupaten/Kota) memiliki tugas dan fungsi yang spesifik, terutama dalam menentukan Awal Ramadhan, Syawal dan Idul Fitri, Dzulhijjah dan Idul Adha."
+                tools:ignore="HardcodedText" />
+
+            <!--Setruktur Organisasi-->
+
+            <!-- Pejabat Kemenag (Opsional) -->
+            <!-- Tambahkan komponen TextView sesuai kebutuhan -->
+
+            <!-- Unit Kerja (Organigram Bidang) -->
+            <!-- Tambahkan komponen TextView sesuai kebutuhan -->
+
+            <!-- Satuan Kerja -->
+            <!-- Tambahkan komponen TextView sesuai kebutuhan -->
+
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
