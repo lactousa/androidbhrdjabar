@@ -100,11 +100,30 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text=""
-            android:textSize="16sp"
+            android:textSize="18sp"
             app:layout_constraintBottom_toTopOf="@+id/latitudeTextView"
             app:layout_constraintEnd_toEndOf="@+id/latitudeTextView"
             app:layout_constraintStart_toStartOf="@+id/latitudeTextView"
             app:layout_constraintTop_toBottomOf="@+id/longitudeTextView" />
+
+        <TextView
+            android:id="@+id/azimuthKaabaTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/azimuthTextView"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:text="Azimuth to Kaaba: "
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/rashdulKiblatTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Rashadul Kiblat : "
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/backAzimuthTextView"
@@ -117,33 +136,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/azimuthTextView" />
-
-        <TextView
-            android:id="@+id/azimuthKaabaTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/azimuthTextView"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="16dp"
-            android:text="Azimuth to Kaaba: "
-            android:textSize="18sp" />
-
-
-        <TextView
-            android:id="@+id/textView50"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="xhdpi"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <TextView
-            android:id="@+id/rashdulKiblatTextView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Rashadul Kiblat : "
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:id="@+id/rotatingImageView"

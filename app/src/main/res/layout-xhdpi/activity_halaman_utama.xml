@@ -27,7 +27,9 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -58,18 +60,18 @@
                 android:layout_marginBottom="435dp"
                 android:text="Assalamu'alaikum"
                 android:textAppearance="@style/GreenTextPoppins"
-                android:textSize="20sp"
+                android:textSize="17sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.166"
+                app:layout_constraintHorizontal_bias="0.211"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.011" />
+                app:layout_constraintVertical_bias="0.009" />
 
             <TextView
                 android:id="@+id/textView2"
-                android:layout_width="92dp"
-                android:layout_height="51dp"
+                android:layout_width="104dp"
+                android:layout_height="25dp"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
@@ -78,11 +80,11 @@
                 android:layout_marginBottom="61dp"
                 android:text="User"
                 android:textAppearance="@style/GreenTextPoppins"
-                android:textSize="20sp"
+                android:textSize="17sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.2"
+                app:layout_constraintHorizontal_bias="0.324"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.066" />
@@ -288,6 +290,7 @@
                 app:layout_constraintVertical_bias="0.066"
                 app:srcCompat="@drawable/kiblat1" />
 
+
             <TextView
                 android:id="@+id/textViewLatitude"
                 android:layout_width="wrap_content"
@@ -295,13 +298,14 @@
                 android:layout_marginTop="327dp"
                 android:text="Latitude: "
                 android:textColor="#FFFFFF"
-                android:textSize="10sp"
+                android:textSize="7sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="@+id/imageView6"
                 app:layout_constraintEnd_toEndOf="@+id/imageView6"
-                app:layout_constraintHorizontal_bias="0.047"
+                app:layout_constraintHorizontal_bias="0.056"
                 app:layout_constraintStart_toStartOf="@+id/imageView6"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
 
             <TextView
                 android:id="@+id/textViewLongitude"
@@ -310,15 +314,14 @@
                 android:layout_marginBottom="4dp"
                 android:text="Longitude: "
                 android:textColor="#FFFFFF"
-                android:textSize="10sp"
+                android:textSize="7sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toTopOf="@+id/textViewLatitude"
                 app:layout_constraintEnd_toEndOf="@+id/imageView6"
-                app:layout_constraintHorizontal_bias="0.022"
+                app:layout_constraintHorizontal_bias="0.057"
                 app:layout_constraintStart_toStartOf="@+id/imageView6"
                 app:layout_constraintTop_toBottomOf="@+id/textView13"
                 app:layout_constraintVertical_bias="1.0" />
-
 
             <TextView
                 android:id="@+id/textView4"
@@ -334,45 +337,47 @@
                 app:layout_constraintHorizontal_bias="0.143"
                 app:layout_constraintStart_toStartOf="@+id/imageView6"
                 app:layout_constraintTop_toTopOf="@+id/imageView6"
-                app:layout_constraintVertical_bias="0.472" />
+                app:layout_constraintVertical_bias="0.054" />
 
             <TextView
                 android:id="@+id/cityNameTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="212dp"
+                android:layout_marginTop="164dp"
                 android:textColor="#000000"
                 android:textSize="11sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.105"
+                app:layout_constraintHorizontal_bias="0.111"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-
-            <TextClock
-                android:id="@+id/textClock2"
-                android:layout_width="21dp"
-                android:layout_height="18dp"
-                android:layout_marginStart="55dp"
+            <TextView
+                android:id="@+id/textViewJadwalSholatSelanjutnya"
+                android:layout_width="111dp"
+                android:layout_height="32dp"
+                android:layout_below="@id/cityNameTextView"
+                android:text="Jadwal Sholat Selanjutnya: "
+                android:textColor="@android:color/black"
+                android:textSize="7sp"
                 app:layout_constraintBottom_toBottomOf="@+id/imageView6"
                 app:layout_constraintEnd_toEndOf="@+id/imageView6"
-                app:layout_constraintHorizontal_bias="0.589"
-                app:layout_constraintStart_toStartOf="@+id/imageView6"
+                app:layout_constraintHorizontal_bias="0.994"
+                app:layout_constraintStart_toStartOf="@+id/guideline4"
                 app:layout_constraintTop_toTopOf="@+id/imageView6"
-                app:layout_constraintVertical_bias="0.486" />
+                app:layout_constraintVertical_bias="0.411" />
 
             <TextView
                 android:id="@+id/textViewDate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="180dp"
+                android:layout_marginTop="128dp"
                 android:layout_marginEnd="4dp"
                 android:textAppearance="@style/GreenTextPoppins"
                 android:textColor="#000000"
                 android:textSize="11sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.107"
+                app:layout_constraintHorizontal_bias="0.109"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -397,7 +402,7 @@
                 android:layout_width="240dp"
                 android:layout_height="20dp"
                 android:layout_marginStart="19dp"
-                android:layout_marginTop="136dp"
+                android:layout_marginTop="96dp"
                 android:text="Badan Hisab Rukyat Daerah Jawa Barat"
                 android:textAlignment="center"
                 android:textAppearance="@style/GreenTextPoppins"
@@ -405,21 +410,21 @@
                 android:textSize="15sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.424"
+                app:layout_constraintHorizontal_bias="0.405"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
                 android:id="@+id/imageView8"
-                android:layout_width="44dp"
-                android:layout_height="35dp"
+                android:layout_width="26dp"
+                android:layout_height="24dp"
                 android:layout_marginEnd="6dp"
                 app:layout_constraintBottom_toBottomOf="@+id/imageView6"
                 app:layout_constraintEnd_toStartOf="@+id/textView4"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/imageView6"
-                app:layout_constraintVertical_bias="0.421"
+                app:layout_constraintVertical_bias="0.131"
                 app:srcCompat="@drawable/segitiga" />
 
             <ImageView
@@ -472,28 +477,27 @@
                 android:textSize="10dp"
                 app:layout_constraintBottom_toBottomOf="@+id/imageView6"
                 app:layout_constraintEnd_toEndOf="@+id/imageView6"
-                app:layout_constraintHorizontal_bias="0.959"
+                app:layout_constraintHorizontal_bias="0.951"
                 app:layout_constraintStart_toStartOf="@+id/imageView6"
                 app:layout_constraintTop_toTopOf="@+id/imageView6"
-                app:layout_constraintVertical_bias="0.867" />
+                app:layout_constraintVertical_bias="0.948" />
 
             <Button
                 android:id="@+id/button5"
                 android:layout_width="100dp"
                 android:layout_height="32dp"
+                android:background="@drawable/shadow_button"
+                android:elevation="20dp"
                 android:gravity="center"
                 android:onClick="goToRealTimeDataActivity"
                 android:text="Real Time"
                 android:textSize="10dp"
-                android:elevation="20dp"
-                android:background="@drawable/shadow_button"
                 app:layout_constraintBottom_toTopOf="@+id/linearLayout"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.919"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/textView"
-                app:layout_constraintVertical_bias="0.989"
-                />
+                app:layout_constraintVertical_bias="0.989" />
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/guideline"
@@ -522,6 +526,67 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 app:layout_constraintGuide_begin="466dp" />
+
+
+            <LinearLayout
+                android:layout_width="102dp"
+                android:layout_height="88dp"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="@+id/imageView6"
+                app:layout_constraintEnd_toEndOf="@+id/imageView6"
+                app:layout_constraintHorizontal_bias="0.081"
+                app:layout_constraintStart_toStartOf="@+id/imageView6"
+                app:layout_constraintTop_toTopOf="@+id/imageView6"
+                app:layout_constraintVertical_bias="0.512">
+
+                <TextView
+                    android:id="@+id/fajrTimeTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Fajr : "
+                    android:textSize="10sp" />
+
+                <TextView
+                    android:id="@+id/shurooqTimeTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Shurooq : "
+                    android:textSize="10sp" />
+
+                <TextView
+                    android:id="@+id/dhuhrTimeTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Dhuhr : "
+                    android:textSize="10sp" />
+
+                <TextView
+                    android:id="@+id/asrTimeTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Asr : "
+                    android:textSize="10sp" />
+                <TextView
+                    android:id="@+id/maghribTimeTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Maghrib : "
+                    android:textSize="10sp" />
+                <TextView
+                    android:id="@+id/ishaTimeTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Isha : "
+                    android:textSize="10sp" />
+
+            </LinearLayout>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="40dp" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

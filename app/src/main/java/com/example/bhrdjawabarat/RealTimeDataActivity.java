@@ -206,8 +206,8 @@ public class RealTimeDataActivity extends AppCompatActivity implements SensorEve
                 // Menyesuaikan azimuth dengan deklinasi magnetik
                 azimuthToKaaba += declination;
 
-                backAzimuthTextView.setText("Back Azimuth: " + backAzimuth);
-                azimuthKaabaTextView.setText("Azimuth to Kaaba: " + azimuthToKaaba);
+                backAzimuthTextView.setText("Back Azimuth: " + backAzimuth + "°");
+                azimuthKaabaTextView.setText("Azimuth to Kaaba: " + azimuthToKaaba + "°");
 
                 // Rotasi ImageView berdasarkan azimuth
                 rotateImageView(rotatingImageView, azimuthToKaaba);
@@ -292,7 +292,7 @@ public class RealTimeDataActivity extends AppCompatActivity implements SensorEve
             if (addresses.size() > 0) {
                 Address address = addresses.get(0);
                 String cityName = address.getLocality();
-                cityNameTextView.setText("Kota: " + cityName);
+                cityNameTextView.setText(cityName);
             } else {
                 cityNameTextView.setText("Tidak dapat menemukan nama kota.");
             }

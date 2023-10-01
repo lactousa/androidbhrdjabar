@@ -3,13 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/background_gradient">
+    android:layout_height="match_parent">
 
     <ImageView
-        android:id="@+id/imageView29"
+        android:id="@+id/imageView70"
         android:layout_width="match_parent"
-        android:layout_height="860dp"
+        android:layout_height="913dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.512"
@@ -17,24 +16,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/boxatas_hijau5" />
-
-    <TextView
-        android:id="@+id/textView52"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="330dp"
-        android:layout_marginEnd="32dp"
-        android:text="mdpi"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.091" />
 
     <ImageView
         android:id="@+id/imageView12"
@@ -46,7 +27,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/headerbg2" />
+        app:srcCompat="@drawable/headerbg1" />
 
     <ImageView
         android:id="@+id/imageView15"
@@ -60,6 +41,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.02"
         app:srcCompat="@drawable/backatas1" />
+
 
     <TextView
         android:id="@+id/textView3"
@@ -77,17 +59,16 @@
         app:layout_constraintVertical_bias="0.355" />
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="500dp"
-        android:layout_marginTop="10dp"
+        android:id="@+id/linearLayout2"
+        android:layout_width="273dp"
+        android:layout_height="408dp"
         android:orientation="vertical"
         android:padding="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView12"
-        app:layout_constraintVertical_bias="0.135"
+        app:layout_constraintTop_toTopOf="@+id/imageView12"
+        app:layout_constraintVertical_bias="1.0"
         tools:ignore="MissingConstraints">
 
 
@@ -117,7 +98,7 @@
             android:id="@+id/cityNameTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text=""
+            android:text="Kota : "
             android:textSize="16sp"
             app:layout_constraintBottom_toTopOf="@+id/latitudeTextView"
             app:layout_constraintEnd_toEndOf="@+id/latitudeTextView"
@@ -151,18 +132,41 @@
             android:id="@+id/textView50"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="mdpi"
+            android:text="xhdpi"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/rashdulKiblatTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Rashadul Kiblat : "
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:id="@+id/rotatingImageView"
             android:layout_width="210dp"
-            android:layout_height="119dp"
+            android:layout_height="125dp"
             app:srcCompat="@drawable/logoarahkibalt12" />
 
-
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="120dp"
+        android:layout_height="45dp"
+        android:gravity="center"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:text="xhdpi"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView12"
+        app:layout_constraintVertical_bias="0.091" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

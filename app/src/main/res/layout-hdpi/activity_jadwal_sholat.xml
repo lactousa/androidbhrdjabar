@@ -109,28 +109,56 @@
 
     <TextView
         android:id="@+id/cityNameTextView"
-        android:layout_width="171dp"
-        android:layout_height="41dp"
-        android:text="Lokasi:"
-        android:textSize="15sp"
+        android:layout_width="144dp"
+        android:layout_height="15dp"
+        android:text=" "
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.861"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.242" />
+
+    <TextView
+        android:id="@+id/cityResultTextView"
+        android:layout_width="229dp"
+        android:layout_height="21dp"
+        android:text=""
+        android:textSize="7sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.404"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.318" />
+
+
+    <TextView
+        android:id="@+id/lokasiTextView"
+        android:layout_width="169dp"
+        android:layout_height="22dp"
+        android:text=""
+        android:textSize="7sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.25" />
+        app:layout_constraintVertical_bias="0.269" />
 
     <TextView
         android:id="@+id/dateTextView"
         android:layout_width="229dp"
         android:layout_height="21dp"
         android:text=""
+        android:textSize="7sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.45"
+        app:layout_constraintHorizontal_bias="0.404"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.355" />
+        app:layout_constraintVertical_bias="0.278" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
@@ -151,7 +179,7 @@
         android:paddingTop="3dp"
         android:pointerIcon="text"
         android:shadowColor="@color/black"
-        android:text="Subuh"
+        android:text="Shubuh"
         android:textAlignment="textStart"
         android:textColor="@color/black"
         android:textSize="20dp"
@@ -311,17 +339,17 @@
         app:layout_constraintVertical_bias="0.682" />
 
     <TextView
-        android:id="@+id/dzuhurTimeTextView"
+        android:id="@+id/dhuhrTimeTextView"
         android:layout_width="100dp"
         android:layout_height="25dp"
         android:text=""
         android:textSize="17sp"
         app:layout_constraintBottom_toBottomOf="@+id/buttonNotifikasi4"
         app:layout_constraintEnd_toEndOf="@+id/buttonNotifikasi4"
-        app:layout_constraintHorizontal_bias="0.942"
+        app:layout_constraintHorizontal_bias="0.926"
         app:layout_constraintStart_toStartOf="@+id/buttonNotifikasi4"
         app:layout_constraintTop_toTopOf="@+id/buttonNotifikasi3"
-        app:layout_constraintVertical_bias="0.48"
+        app:layout_constraintVertical_bias="0.84"
         tools:ignore="MissingConstraints" />
 
     <ImageView
@@ -361,7 +389,7 @@
         app:layout_constraintVertical_bias="0.779" />
 
     <TextView
-        android:id="@+id/asharTimeTextView"
+        android:id="@+id/asrTimeTextView"
         android:layout_width="100dp"
         android:layout_height="25dp"
         android:text=""
@@ -411,7 +439,7 @@
         app:layout_constraintVertical_bias="0.876" />
 
     <TextView
-        android:id="@+id/magribTimeTextView"
+        android:id="@+id/maghribTimeTextView"
         android:layout_width="100dp"
         android:layout_height="25dp"
         android:text=""
@@ -462,7 +490,7 @@
         app:layout_constraintVertical_bias="0.969" />
 
     <TextView
-        android:id="@+id/isyaTimeTextView"
+        android:id="@+id/ishaTimeTextView"
         android:layout_width="100dp"
         android:layout_height="25dp"
         android:text=""
@@ -492,7 +520,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_begin="205dp" />
+        app:layout_constraintGuide_end="155dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline6"

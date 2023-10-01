@@ -1,7 +1,6 @@
 package com.example.bhrdjawabarat;
 
 import android.Manifest;
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -28,7 +27,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.osmdroid.util.GeoPoint;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -46,22 +44,30 @@ public class HalamanUtamaActivity extends AppCompatActivity {
     private LocationManager locationManager;
     private LocationListener locationListener;
 
-    private TextView textViewLocation;
-
     private TextView cityNameTextView;
+    private TextView textViewJadwalSholatSelanjutnya;
 
     private RecyclerView recyclerView;
     private BeritaAdapter beritaAdapter;
     private ArrayList<BeritaModel> beritaModel;
 
+    private TextView textViewCurrentPrayerTime;
 
-    @SuppressLint("MissingInflatedId")
+    private TextView textViewNextPrayerTime;
+    private TextView fajrTimeTextView;
+    private TextView shurooqTimeTextView;
+    private TextView dhuhrTimeTextView;
+    private TextView asrTimeTextView;
+    private TextView maghribTimeTextView;
+    private TextView ishaTimeTextView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_halaman_utama);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED);
         cityNameTextView = findViewById(R.id.cityNameTextView);
+        textViewJadwalSholatSelanjutnya = findViewById(R.id.textViewJadwalSholatSelanjutnya);
 
         TextView textViewDate = findViewById(R.id.textViewDate);
         recyclerView = findViewById(R.id.recyclerView);
@@ -75,28 +81,24 @@ public class HalamanUtamaActivity extends AppCompatActivity {
         beritaAdapter = new BeritaAdapter(beritaModel);
         recyclerView.setAdapter(beritaAdapter);
 
+        fajrTimeTextView = findViewById(R.id.fajrTimeTextView);
+        shurooqTimeTextView = findViewById(R.id.shurooqTimeTextView);
+        dhuhrTimeTextView = findViewById(R.id.dhuhrTimeTextView);
+        asrTimeTextView = findViewById(R.id.asrTimeTextView);
+        maghribTimeTextView = findViewById(R.id.maghribTimeTextView);
+        ishaTimeTextView = findViewById(R.id.ishaTimeTextView);
+
         cityNameTextView = findViewById(R.id.cityNameTextView);
         getData();
         fetchPrayerTimes();
 
-
         // Inisialisasi locationManager dan locationListener
         locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
         locationListener = new LocationListener() {
-
-            private void updateLocationText(double latitude, double longitude) {
-                TextView textViewLatitude = findViewById(R.id.textViewLatitude);
-                TextView textViewLongitude = findViewById(R.id.textViewLongitude);
-
-                textViewLatitude.setText("Latitude: " + latitude);
-                textViewLongitude.setText("Longitude: " + longitude);
-            }
-
             @Override
             public void onLocationChanged(Location location) {
                 double latitude = location.getLatitude();
                 double longitude = location.getLongitude();
-                updateLocationText(latitude, longitude);
 
                 // Simpan nilai latitude dan longitude ke SharedPreferences
                 SharedPreferences sharedPreferences = getSharedPreferences("user_location", MODE_PRIVATE);
@@ -104,7 +106,6 @@ public class HalamanUtamaActivity extends AppCompatActivity {
                 editor.putString("latitude", String.valueOf(latitude));
                 editor.putString("longitude", String.valueOf(longitude));
                 editor.apply();
-
             }
 
             @Override
@@ -118,10 +119,7 @@ public class HalamanUtamaActivity extends AppCompatActivity {
             @Override
             public void onProviderDisabled(String provider) {
             }
-
-
         };
-
 
         // Meminta izin lokasi jika belum diberikan
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
@@ -132,7 +130,6 @@ public class HalamanUtamaActivity extends AppCompatActivity {
         } else {
             enableLocation();
         }
-
 
         // Menampilkan tanggal saat ini
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd MMM yyyy", Locale.getDefault());
@@ -181,7 +178,6 @@ public class HalamanUtamaActivity extends AppCompatActivity {
         recyclerView.setAdapter(beritaAdapter);
     }
 
-
     // Load JSON from assets folder
     private String loadJSONFromAsset() {
         String json;
@@ -209,58 +205,109 @@ public class HalamanUtamaActivity extends AppCompatActivity {
         }
     }
 
-    private void updateLocation(Location location) {
-        double latitude = location.getLatitude();
-        double longitude = location.getLongitude();
-        GeoPoint geoPoint = new GeoPoint(latitude, longitude);
+    private void fetchPrayerTimes() {
+        // Mengambil koordinat dari SharedPreferences
+        SharedPreferences sharedPreferences = getSharedPreferences("user_location", MODE_PRIVATE);
+        String latitudeString = sharedPreferences.getString("latitude", "");
+        String longitudeString = sharedPreferences.getString("longitude", "");
 
-        String address = getAddressFromGeoPoint(geoPoint);
-        if (address != null) {
-            textViewLocation.setText(address);
-        } else {
-            textViewLocation.setText("Alamat tidak ditemukan");
-        }
-    }
+        if (!latitudeString.isEmpty() && !longitudeString.isEmpty()) {
+            double latitude = Double.parseDouble(latitudeString);
+            double longitude = Double.parseDouble(longitudeString);
 
-    private String getAddressFromGeoPoint(GeoPoint geoPoint) {
-        if (geoPoint != null) {
-            try {
-                Geocoder geocoder = new Geocoder(this, Locale.getDefault());
-                List<Address> addresses = geocoder.getFromLocation(
-                        geoPoint.getLatitude(), geoPoint.getLongitude(), 1
-                );
-                if (!addresses.isEmpty()) {
-                    Address address = addresses.get(0);
-                    String city = address.getLocality();
-                    String district = address.getSubAdminArea();
-                    String locationName = (city != null) ? city : district;
-                    return locationName;
+            // Mengambil nama kota berdasarkan koordinat
+            convertCoordinatesToCityName(latitude, longitude);
+
+            // Memanggil API untuk mendapatkan jadwal sholat
+            PrayerTimesAPIManager.fetchPrayerTimes(cityNameTextView.getText().toString(), new PrayerTimesAPIManager.PrayerTimesListener() {
+                @Override
+                public void onPrayerTimesFetched(PrayerTimes prayerTimes) {
+                    // Set the prayer times to the respective TextViews
+                    setPrayerTimes(prayerTimes);
+
+                    // Update TextView dengan jadwal sholat selanjutnya
+                    updateJadwalSholatSelanjutnya(prayerTimes);
                 }
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            });
+        } else {
+            cityNameTextView.setText("Tidak dapat mendapatkan koordinat.");
         }
-        return null;
     }
 
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        if (requestCode == LOCATION_PERMISSION_REQUEST_CODE) {
-            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                enableLocation();
+    private void setPrayerTimes(PrayerTimes prayerTimes) {
+        fajrTimeTextView.setText("Fajr: " + prayerTimes.getFajr());
+        shurooqTimeTextView.setText("Shurooq: " + prayerTimes.getShurooq());
+        dhuhrTimeTextView.setText("Dhuhr: " + prayerTimes.getDhuhr());
+        asrTimeTextView.setText("Asr: " + prayerTimes.getAsr());
+        maghribTimeTextView.setText("Maghrib: " + prayerTimes.getMaghrib());
+        ishaTimeTextView.setText("Isha: " + prayerTimes.getIsha());
+    }
+
+
+
+    private void convertCoordinatesToCityName(double latitude, double longitude) {
+        Geocoder geocoder = new Geocoder(this, Locale.getDefault());
+
+        try {
+            List<Address> addresses = geocoder.getFromLocation(latitude, longitude, 1);
+
+            if (addresses.size() > 0) {
+                Address address = addresses.get(0);
+                String cityName = address.getLocality();
+                cityNameTextView.setText("Kota: " + cityName);
             } else {
-                Toast.makeText(this, "Izin lokasi ditolak.", Toast.LENGTH_SHORT).show();
+                cityNameTextView.setText("Tidak dapat menemukan nama kota.");
             }
+        } catch (IOException e) {
+            e.printStackTrace();
+            cityNameTextView.setText("Gagal mengonversi koordinat ke nama kota. Pastikan perangkat terhubung ke internet dan koordinat valid.");
         }
     }
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        if (locationManager != null && locationListener != null) {
-            locationManager.removeUpdates(locationListener);
+    // Implementasikan metode untuk mendapatkan jadwal sholat selanjutnya
+    private String getJadwalSholatSelanjutnya(PrayerTimes prayerTimes) {
+        // Implementasikan logika untuk mendapatkan waktu sholat selanjutnya
+        // Anda dapat menggunakan logika sesuai kebutuhan, seperti membandingkan waktu sholat dengan waktu saat ini
+        // dan mengambil waktu sholat yang belum terjadi.
+        // Di sini, saya akan menunjukkan contoh sederhana:
+        String[] sholatTimes = {
+                prayerTimes.getFajr(),
+                prayerTimes.getDhuhr(),
+                prayerTimes.getAsr(),
+                prayerTimes.getMaghrib(),
+                prayerTimes.getIsha()
+        };
+
+        // Dapatkan waktu saat ini
+        String waktuSaatIni = getCurrentTime(); // Implementasi getCurrentTime sesuai kebutuhan Anda
+
+        // Temukan sholat yang belum terjadi
+        for (String time : sholatTimes) {
+            if (time.compareTo(waktuSaatIni) > 0) {
+                return time;
+            }
         }
+
+        // Jika semua sholat sudah lewat, kembalikan pesan
+        return "Semua sholat telah lewat.";
+    }
+
+    // Implementasikan metode untuk mendapatkan waktu saat ini
+    private String getCurrentTime() {
+        // Implementasikan logika untuk mendapatkan waktu saat ini
+        // Misalnya, Anda dapat menggunakan SimpleDateFormat
+        SimpleDateFormat sdf = new SimpleDateFormat("HH:mm", Locale.getDefault());
+        Date currentDate = new Date();
+        return sdf.format(currentDate);
+    }
+
+    // Implementasikan metode untuk update jadwal sholat selanjutnya
+    private void updateJadwalSholatSelanjutnya(PrayerTimes prayerTimes) {
+        // Dapatkan waktu sholat selanjutnya berdasarkan waktu saat ini
+        String jadwalSelanjutnya = getJadwalSholatSelanjutnya(prayerTimes);
+
+        // Update TextView dengan jadwal sholat selanjutnya
+        textViewJadwalSholatSelanjutnya.setText("Jadwal Sholat Selanjutnya: " + jadwalSelanjutnya);
     }
 
     public void goToTentangBHRD(View view) {
@@ -299,44 +346,23 @@ public class HalamanUtamaActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    private void convertCoordinatesToCityName(double latitude, double longitude) {
-        Geocoder geocoder = new Geocoder(this, Locale.getDefault());
-
-        try {
-            List<Address> addresses = geocoder.getFromLocation(latitude, longitude, 1);
-
-            if (addresses.size() > 0) {
-                Address address = addresses.get(0);
-                String cityName = address.getLocality();
-                cityNameTextView.setText("Kota: " + cityName);
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (requestCode == LOCATION_PERMISSION_REQUEST_CODE) {
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                enableLocation();
             } else {
-                cityNameTextView.setText("Tidak dapat menemukan nama kota.");
+                Toast.makeText(this, "Izin lokasi ditolak.", Toast.LENGTH_SHORT).show();
             }
-        } catch (IOException e) {
-            e.printStackTrace();
-            cityNameTextView.setText("Gagal mengonversi koordinat ke nama kota. Pastikan perangkat terhubung ke internet dan koordinat valid.");
         }
     }
 
-    private void fetchPrayerTimes() {
-        // Mengambil koordinat dari SharedPreferences
-        SharedPreferences sharedPreferences = getSharedPreferences("user_location", MODE_PRIVATE);
-        String latitudeString = sharedPreferences.getString("latitude", "");
-        String longitudeString = sharedPreferences.getString("longitude", "");
-
-        if (!latitudeString.isEmpty() && !longitudeString.isEmpty()) {
-            double latitude = Double.parseDouble(latitudeString);
-            double longitude = Double.parseDouble(longitudeString);
-
-            // Mengambil nama kota berdasarkan koordinat
-            convertCoordinatesToCityName(latitude, longitude);
-        } else {
-            cityNameTextView.setText("Tidak dapat mendapatkan koordinat.");
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (locationManager != null && locationListener != null) {
+            locationManager.removeUpdates(locationListener);
         }
     }
-
 }
-
-
-
-

@@ -37,7 +37,7 @@
                 android:id="@+id/textView15"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="xxxhdpi"
+                android:text="xhdpi"
                 app:layout_constraintBottom_toTopOf="@+id/textView13"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.501"
@@ -282,10 +282,10 @@
                 android:layout_height="48dp"
                 app:layout_constraintBottom_toBottomOf="@+id/imageView6"
                 app:layout_constraintEnd_toEndOf="@+id/imageView6"
-                app:layout_constraintHorizontal_bias="0.936"
+                app:layout_constraintHorizontal_bias="0.995"
                 app:layout_constraintStart_toStartOf="@+id/imageView6"
                 app:layout_constraintTop_toTopOf="@+id/imageView6"
-                app:layout_constraintVertical_bias="0.176"
+                app:layout_constraintVertical_bias="0.066"
                 app:srcCompat="@drawable/kiblat1" />
 
             <TextView
@@ -319,9 +319,10 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView13"
                 app:layout_constraintVertical_bias="1.0" />
 
+
             <TextView
                 android:id="@+id/textView4"
-                android:layout_width="109dp"
+                android:layout_width="150dp"
                 android:layout_height="22dp"
                 android:text="Waktu Sholat"
                 android:textAppearance="@style/GreenTextPoppins"
@@ -335,7 +336,6 @@
                 app:layout_constraintTop_toTopOf="@+id/imageView6"
                 app:layout_constraintVertical_bias="0.472" />
 
-
             <TextView
                 android:id="@+id/cityNameTextView"
                 android:layout_width="wrap_content"
@@ -348,18 +348,21 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <TextClock
-                android:id="@+id/textClock2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="55dp"
+
+            <TextView
+                android:id="@+id/textViewJadwalSholatSelanjutnya"
+                android:layout_width="327dp"
+                android:layout_height="31dp"
+                android:layout_below="@id/cityNameTextView"
+                android:text="Jadwal Sholat Selanjutnya: "
+                android:textColor="@android:color/black"
+                android:textSize="16sp"
                 app:layout_constraintBottom_toBottomOf="@+id/imageView6"
                 app:layout_constraintEnd_toEndOf="@+id/imageView6"
-                app:layout_constraintHorizontal_bias="0.225"
-                app:layout_constraintStart_toStartOf="@+id/imageView6"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/guideline4"
                 app:layout_constraintTop_toTopOf="@+id/imageView6"
-                app:layout_constraintVertical_bias="0.483" />
-
+                app:layout_constraintVertical_bias="0.664" />
 
             <TextView
                 android:id="@+id/textViewDate"
@@ -434,18 +437,6 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.025"
                 app:srcCompat="@drawable/logo" />
-
-            <TextView
-                android:id="@+id/textView44"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Koordinat Lokasi Anda"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.17"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.316" />
 
 
             <LinearLayout
